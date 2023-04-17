@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["fc1.csproj", "."]
-RUN dotnet restore "./fc1.csproj"
+COPY ["fine-controller-example-01.csproj", "."]
+RUN dotnet restore "./fine-controller-example-01.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "fc1.csproj" -c Release -o /app/build
+RUN dotnet build "fine-controller-example-01.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "fc1.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "fine-controller-example-01.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "fc1.dll"]
+ENTRYPOINT ["dotnet", "Example.dll"]
