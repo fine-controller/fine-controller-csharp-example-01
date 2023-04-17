@@ -13,7 +13,7 @@ namespace Example.Controllers
 		public void Put(string @namespace, string name, V1Cat cat)
 		{
 			Console.WriteLine($"\n{Request.Method} {Request.Path}\nnamespace : {@namespace}\nname : {name}\nrequest : {JsonConvert.SerializeObject(cat, Formatting.Indented)}");
-		} 
+		}
 
 		[HttpDelete("{namespace}/{name}")]
 		public void Delete(string @namespace, string name, V1Cat cat)
