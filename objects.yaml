@@ -26,6 +26,6 @@ spec:
 apiVersion: fine-controller-csharp-example-01.io/v1
 kind: V1House
 metadata:
-  name: blue-house
+  name: my-house
 spec:
   color: blue
