@@ -36,7 +36,7 @@ metadata:
   labels:
     app: fine-controller-csharp-example-01
   annotations:
-    fine-controller.github.io/enable: 'true'
+    fine-controller.github.io: 'true'
     fine-controller.github.io/port: '80'
     fine-controller.github.io/spec-format: json
     fine-controller.github.io/spec-path: /swagger/v1/swagger.json
