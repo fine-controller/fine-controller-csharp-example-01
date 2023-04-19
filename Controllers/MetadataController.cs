@@ -11,7 +11,7 @@ namespace Example.Controllers
 	{
 		private static readonly Metadata Metadata = new()
 		{
-			Group = "fine-controller-csharp-example-01.github.io"
+			Group = "fine-controller-csharp-example-01.io"
 		};
 
 		[HttpGet]
