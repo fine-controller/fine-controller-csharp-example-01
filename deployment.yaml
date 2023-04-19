@@ -1,5 +1,5 @@
-﻿kind: Namespace
-apiVersion: v1
+﻿apiVersion: v1
+kind: Namespace
 metadata:
   name: fine-controller-csharp-example-01
   labels:
