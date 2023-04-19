@@ -1,0 +1,15 @@
+﻿apiVersion: fine-controller-csharp-example-01.io/v1
+kind: V1Cat
+metadata:
+  name: cat-instance-1
+spec:
+  age1: 5
+  name1: "Fluffy"
+---
+apiVersion: fine-controller-csharp-example-01.io/v1
+kind: V1Cat
+metadata:
+  name: cat-instance-2
+spec:
+  age1: 3
+  name1: "Whiskers"
