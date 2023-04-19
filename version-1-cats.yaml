@@ -1,15 +1,31 @@
-﻿apiVersion: fine-controller-csharp-example-01.io/v1
-kind: V1Cat
+﻿apiVersion: v1
+kind: Namespace
 metadata:
-  name: cat-instance-1
-spec:
-  age1: 5
-  name1: "Fluffy"
+  name: cats
+  labels:
+    name: cats
 ---
 apiVersion: fine-controller-csharp-example-01.io/v1
 kind: V1Cat
 metadata:
-  name: cat-instance-2
+  name: fluffy
+  namespace: cats
 spec:
-  age1: 3
-  name1: "Whiskers"
+  age1: 5
+  name1: Fluffy
+---
+apiVersion: fine-controller-csharp-example-01.io/v2
+kind: V2Cat
+metadata:
+  name: whiskers
+  namespace: cats
+spec:
+  age2: 3
+  name2: Whiskers
+---
+apiVersion: fine-controller-csharp-example-01.io/v1
+kind: V1House
+metadata:
+  name: blue-house
+spec:
+  color: blue

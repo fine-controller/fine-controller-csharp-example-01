@@ -9,16 +9,16 @@ namespace Example.Controllers
 	[Route("/v1house")]
 	public class V1HouseController : ControllerBase
 	{
-		[HttpPut("{namespace}/{name}")]
-		public void Put(string @namespace, string name, V1House v1house)
+		[HttpPut("{name}")]
+		public void Put(string name, V1House v1house)
 		{
-			Console.WriteLine($"\n{Request.Method} {Request.Path}\nnamespace : {@namespace}\nname : {name}\nrequest : {JsonConvert.SerializeObject(v1house, Formatting.Indented)}");
+			Console.WriteLine($"\n{Request.Method} {Request.Path}\nname : {name}\nrequest : {JsonConvert.SerializeObject(v1house, Formatting.Indented)}");
 		}
 
-		[HttpDelete("{namespace}/{name}")]
-		public void Delete(string @namespace, string name, V1House v1house)
+		[HttpDelete("{name}")]
+		public void Delete(string name, V1House v1house)
 		{
-			Console.WriteLine($"\n{Request.Method} {Request.Path}\nnamespace : {@namespace}\nname : {name}\nrequest : {JsonConvert.SerializeObject(v1house, Formatting.Indented)}");
+			Console.WriteLine($"\n{Request.Method} {Request.Path}\nname : {name}\nrequest : {JsonConvert.SerializeObject(v1house, Formatting.Indented)}");
 		}
 	}
 }
