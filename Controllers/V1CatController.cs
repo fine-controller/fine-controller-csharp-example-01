@@ -6,7 +6,7 @@ using System;
 namespace Example.Controllers
 {
 	[ApiController]
-	[Route("/v1cat")]
+	[Route("/-/v1/v1cat")]
 	public class V1CatController : ControllerBase
 	{
 		[HttpPut("{namespace}/{name}")]
