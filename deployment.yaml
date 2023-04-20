@@ -1,29 +1,29 @@
 ﻿apiVersion: v1
 kind: Namespace
 metadata:
-  name: fine-controller-csharp-example-01
+  name: finecontroller-csharp-example-01
   labels:
-    name: fine-controller-csharp-example-01
+    name: finecontroller-csharp-example-01
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fine-controller-csharp-example-01
-  namespace: fine-controller-csharp-example-01
+  name: finecontroller-csharp-example-01
+  namespace: finecontroller-csharp-example-01
   labels:
-    app: fine-controller-csharp-example-01
+    app: finecontroller-csharp-example-01
 spec:
   selector:
     matchLabels:
-      app: fine-controller-csharp-example-01
+      app: finecontroller-csharp-example-01
   template:
     metadata:
       labels:
-        app: fine-controller-csharp-example-01
+        app: finecontroller-csharp-example-01
     spec:
       containers:
-      - name: fine-controller-csharp-example-01
-        image: fortunen/fine-controller-csharp-example-01
+      - name: finecontroller-csharp-example-01
+        image: fortunen/finecontroller-csharp-example-01
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -31,18 +31,18 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: fine-controller-csharp-example-01
-  namespace: fine-controller-csharp-example-01
+  name: finecontroller-csharp-example-01
+  namespace: finecontroller-csharp-example-01
   labels:
-    app: fine-controller-csharp-example-01
+    app: finecontroller-csharp-example-01
   annotations:
-    fine-controller.github.io: 'true'
-    fine-controller.github.io/port: '80'
-    fine-controller.github.io/spec-format: json
-    fine-controller.github.io/spec-path: /swagger/v1/swagger.json
+    finecontroller.github.io: 'true'
+    finecontroller.github.io/port: '80'
+    finecontroller.github.io/spec-format: json
+    finecontroller.github.io/spec-path: /swagger/v1/swagger.json
 spec:
   type: ClusterIP
   ports:
   - port: 80
   selector:
-    app: fine-controller-csharp-example-01
+    app: finecontroller-csharp-example-01

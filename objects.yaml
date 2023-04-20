@@ -5,7 +5,7 @@ metadata:
   labels:
     name: cats
 ---
-apiVersion: fine-controller-csharp-example-01.io/v1
+apiVersion: finecontroller-csharp-example-01.io/v1
 kind: V1Cat
 metadata:
   name: fluffy
@@ -14,7 +14,7 @@ spec:
   age1: 5
   name1: Fluffy
 ---
-apiVersion: fine-controller-csharp-example-01.io/v2
+apiVersion: finecontroller-csharp-example-01.io/v2
 kind: V2Cat
 metadata:
   name: whiskers
@@ -23,7 +23,7 @@ spec:
   age2: 3
   name2: Whiskers
 ---
-apiVersion: fine-controller-csharp-example-01.io/v1
+apiVersion: finecontroller-csharp-example-01.io/v1
 kind: V1House
 metadata:
   name: my-house

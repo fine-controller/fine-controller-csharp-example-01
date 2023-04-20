@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using k8s;
+using k8s.Models;
 
 namespace Example.Models
 {
-	public class V2Cat
+	public class V2Cat : IKubernetesObject<V1ObjectMeta>, ISpec<V2CatSpec>, IStatus<V2CatStatus>
 	{
-		[Required]
-		public string Name2 { get; set; }
-
-		[Range(0, 20)]
-		public int Age2 { get; set; }
+		public string ApiVersion { get; set; }
+		public string Kind { get; set; }
+		public V1ObjectMeta Metadata { get; set; }
+		public V2CatSpec Spec { get; set; }
+		public V2CatStatus Status { get; set; }
 	}
 }

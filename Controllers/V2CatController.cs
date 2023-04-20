@@ -6,16 +6,16 @@ using System;
 namespace Example.Controllers
 {
 	[ApiController]
-	[Route("/-/v2/v2cat")]
 	public class V2CatController : ControllerBase
 	{
-		[HttpPut("{namespace}/{name}")]
-		public void Put(string @namespace, string name, V2Cat v2cat)
+		[HttpPut("/./v2/v2cat/{namepace}/{name}")]
+		public V2CatStatus Put(string @namespace, string name, V2Cat v2cat)
 		{
 			Console.WriteLine($"\n{Request.Method} {Request.Path}\nnamespace : {@namespace}\nname : {name}\nrequest : {JsonConvert.SerializeObject(v2cat, Formatting.Indented)}");
+			return v2cat.Status;
 		}
 
-		[HttpDelete("{namespace}/{name}")]
+		[HttpDelete("/./v2/v2cat/{namepace}/{name}")]
 		public void Delete(string @namespace, string name, V2Cat v2cat)
 		{
 			Console.WriteLine($"\n{Request.Method} {Request.Path}\nnamespace : {@namespace}\nname : {name}\nrequest : {JsonConvert.SerializeObject(v2cat, Formatting.Indented)}");

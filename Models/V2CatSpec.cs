@@ -2,7 +2,7 @@
 
 namespace Example.Models
 {
-	public class V1Cat
+	public class V2CatSpec
 	{
 		[Required]
 		public string Name1 { get; set; }
