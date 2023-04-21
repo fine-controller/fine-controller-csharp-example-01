@@ -5,15 +5,6 @@ metadata:
   labels:
     name: cats
 ---
-apiVersion: finecontroller-csharp-example-01.io/v1
-kind: V1Cat
-metadata:
-  name: fluffy
-  namespace: cats
-spec:
-  age1: 5
-  name1: Fluffy
----
 apiVersion: finecontroller-csharp-example-01.io/v2
 kind: V2Cat
 metadata:
