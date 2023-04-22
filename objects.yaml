@@ -8,11 +8,11 @@ metadata:
 apiVersion: finecontroller-csharp-example-01.io/v2
 kind: V2Cat
 metadata:
-  name: whiskers
+  name: tom
   namespace: cats
 spec:
   age2: 3
-  name2: Whiskers
+  name2: tom
 ---
 apiVersion: finecontroller-csharp-example-01.io/v1
 kind: V1House
@@ -20,17 +20,3 @@ metadata:
   name: my-house
 spec:
   color: Red
----
-apiVersion: finecontroller-csharp-example-01.io/v1
-kind: V1House
-metadata:
-  name: her-house
-spec:
-  color: red
----
-apiVersion: finecontroller-csharp-example-01.io/v1
-kind: V1House
-metadata:
-  name: their-house
-spec:
-  color: NonOnEnum
