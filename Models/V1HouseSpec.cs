@@ -2,6 +2,6 @@
 {
 	public class V1HouseSpec
 	{
-		public string Color { get; set; }
+		public Color Color { get; set; }
 	}
 }
