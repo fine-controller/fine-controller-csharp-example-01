@@ -29,11 +29,15 @@ spec:
         image: fortunen/finecontroller
         imagePullPolicy: Always # for development only
         env:
-        - name: PORT
+        - name: API_HOST
+          value: localhost
+        - name: API_PORT
           value: '80'
-        - name: SPEC_PATH
-          value: /swagger/v1/swagger.json
-        - name: SPEC_FORMAT
+        - name: API_HTTPS
+          value: 'false'
+        - name: API_SPEC_PATH
+          value: swagger/v1/swagger.json
+        - name: API_SPEC_FORMAT
           value: json
-        - name: GROUP
+        - name: API_GROUP
           value: finecontroller-csharp-example-01.io
