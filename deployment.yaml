@@ -1,4 +1,4 @@
-﻿apiVersion: v1
+﻿﻿apiVersion: v1
 kind: Namespace
 metadata:
   name: finecontroller-csharp-example-01
@@ -24,25 +24,16 @@ spec:
       containers:
       - name: finecontroller-csharp-example-01
         image: fortunen/finecontroller-csharp-example-01
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: finecontroller-csharp-example-01
-  namespace: finecontroller-csharp-example-01
-  labels:
-    app: finecontroller-csharp-example-01
-  annotations:
-    finecontroller.github.io: 'true'
-    finecontroller.github.io/port: '80'
-    finecontroller.github.io/spec-format: json
-    finecontroller.github.io/spec-path: /swagger/v1/swagger.json
-spec:
-  type: ClusterIP
-  ports:
-  - port: 80
-  selector:
-    app: finecontroller-csharp-example-01
+        imagePullPolicy: Always # for development only
+      - name: finecontroller
+        image: fortunen/finecontroller
+        imagePullPolicy: Always # for development only
+        env:
+        - name: PORT
+          value: '80'
+        - name: SPEC_PATH
+          value: /swagger/v1/swagger.json
+        - name: SPEC_FORMAT
+          value: json
+        - name: GROUP
+          value: finecontroller-csharp-example-01.io
