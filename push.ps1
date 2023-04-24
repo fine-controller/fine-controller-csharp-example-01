@@ -7,7 +7,7 @@ git push
 
 # DockerHub
 
-docker build . -t fortunen/finecontroller-csharp-example-01
-docker tag fortunen/finecontroller-csharp-example-01 fortunen/finecontroller-csharp-example-01
-docker push fortunen/finecontroller-csharp-example-01
-docker pushrm fortunen/finecontroller-csharp-example-01 # https://github.com/christian-korneck/docker-pushrm
+docker build . -t fortunen/fineoperator-csharp-example-01
+docker tag fortunen/fineoperator-csharp-example-01 fortunen/fineoperator-csharp-example-01
+docker push fortunen/fineoperator-csharp-example-01
+docker pushrm fortunen/fineoperator-csharp-example-01 # https://github.com/christian-korneck/docker-pushrm
