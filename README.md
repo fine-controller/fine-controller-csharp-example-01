@@ -1,1 +1,1 @@
-# fineoperator-csharp-example-01
+# fine-kube-operator-csharp-example-01

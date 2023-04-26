@@ -1,24 +1,24 @@
 ﻿﻿apiVersion: v1
 kind: Namespace
 metadata:
-  name: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
   labels:
-    name: fineoperator-csharp-example-01
+    name: fine-kube-operator-csharp-example-01
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: fineoperator-csharp-example-01
-  namespace: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
+  namespace: fine-kube-operator-csharp-example-01
   labels:
-    name: fineoperator-csharp-example-01
+    name: fine-kube-operator-csharp-example-01
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
   labels:
-    name: fineoperator-csharp-example-01
+    name: fine-kube-operator-csharp-example-01
 rules:
 - apiGroups: ["*"]
   resources: ["*"]
@@ -27,43 +27,43 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
   labels:
-    name: fineoperator-csharp-example-01
+    name: fine-kube-operator-csharp-example-01
 subjects:
 - kind: ServiceAccount
-  name: fineoperator-csharp-example-01
-  namespace: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
+  namespace: fine-kube-operator-csharp-example-01
 roleRef:
   kind: ClusterRole
-  name: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fineoperator-csharp-example-01
-  namespace: fineoperator-csharp-example-01
+  name: fine-kube-operator-csharp-example-01
+  namespace: fine-kube-operator-csharp-example-01
   labels:
-    app: fineoperator-csharp-example-01
+    app: fine-kube-operator-csharp-example-01
 spec:
   selector:
     matchLabels:
-      app: fineoperator-csharp-example-01
+      app: fine-kube-operator-csharp-example-01
   template:
     metadata:
       labels:
-        app: fineoperator-csharp-example-01
+        app: fine-kube-operator-csharp-example-01
     spec:
-      serviceAccountName: fineoperator-csharp-example-01
+      serviceAccountName: fine-kube-operator-csharp-example-01
       containers:
-      - name: fineoperator-csharp-example-01
-        image: fortunen/fineoperator-csharp-example-01
+      - name: fine-kube-operator-csharp-example-01
+        image: fortunen/fine-kube-operator-csharp-example-01
         imagePullPolicy: Always # for development only
         ports:
         - containerPort: 80
-      - name: fineoperator
-        image: fortunen/fineoperator
+      - name: fine-kube-operator
+        image: fortunen/fine-kube-operator
         imagePullPolicy: Always # for development only
         env:
         - name: API_HOST
@@ -77,4 +77,4 @@ spec:
         - name: API_SPEC_FORMAT
           value: json
         - name: API_GROUP
-          value: fineoperator-csharp-example-01.io
+          value: fine-kube-operator-csharp-example-01.io

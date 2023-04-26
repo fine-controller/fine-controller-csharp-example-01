@@ -6,14 +6,14 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
 WORKDIR /src
-COPY ["fineoperator-csharp-example-01.csproj", "."]
-RUN dotnet restore "./fineoperator-csharp-example-01.csproj"
+COPY ["fine-kube-operator-csharp-example-01.csproj", "."]
+RUN dotnet restore "./fine-kube-operator-csharp-example-01.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "fineoperator-csharp-example-01.csproj" -c Release -o /app/build
+RUN dotnet build "fine-kube-operator-csharp-example-01.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "fineoperator-csharp-example-01.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "fine-kube-operator-csharp-example-01.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
