@@ -5,7 +5,7 @@ metadata:
   labels:
     name: cats
 ---
-apiVersion: fine-kube-operator-csharp-example-01.io/v2
+apiVersion: fine-kube-operator-csharp-example.io/v2
 kind: V2Cat
 metadata:
   name: tom
@@ -14,7 +14,7 @@ spec:
   age2: 3
   name2: tom
 ---
-apiVersion: fine-kube-operator-csharp-example-01.io/v1
+apiVersion: fine-kube-operator-csharp-example.io/v1
 kind: V1House
 metadata:
   name: my-house
